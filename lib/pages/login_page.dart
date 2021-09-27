@@ -97,7 +97,7 @@ class _LoginPageState extends State<LoginPage> {
                       child: AnimatedContainer(
                         duration: const Duration(seconds: 1),
                         width: changeButton ? 50 : 150,
-                        height: 40,
+                        height: 50,
                         alignment: Alignment.center,
                         child: changeButton
                             ? const Icon(
