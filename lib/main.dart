@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:helloworld/utils/routes.dart';
 import 'package:helloworld/widgets/themes.dart';
 import 'pages/home_page.dart';
