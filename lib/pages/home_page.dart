@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/models/catalog.dart';
 import 'package:helloworld/widgets/drawer.dart';
+import 'package:helloworld/widgets/item_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -13,10 +15,15 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Catalog App"),
       ),
-      body: Center(
-        // ignore: avoid_unnecessary_containers
-        child: Container(
-          child: Text("Welcome to $days days of Flutter by $name"),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ListView.builder(
+          itemCount: CatalogModel.items.length,
+          itemBuilder: (context, index) {
+            return ItemWidget(
+              item: CatalogModel.items[index],
+            );
+          },
         ),
       ),
       // ignore: prefer_const_constructors
