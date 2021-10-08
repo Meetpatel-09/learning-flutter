@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
 import 'package:helloworld/models/catalog.dart';
-import 'package:helloworld/widgets/drawer.dart';
-import 'package:helloworld/widgets/item_widget.dart';
+import 'package:helloworld/widgets/home_widgets/catalog_header.dart';
+import 'package:helloworld/widgets/home_widgets/catalog_list.dart';
+import 'package:helloworld/widgets/themes.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -38,24 +40,22 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Catalog App"),
+      backgroundColor: MyTheme.creamColor,
+      body: SafeArea(
+        child: Container(
+          padding: Vx.m32,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const CatalogHeader(),
+              if (CatalogModel.items.isNotEmpty)
+                const CatalogList().expand()
+              else
+                const Center(child: CircularProgressIndicator()).expand()
+            ],
+          ),
+        ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        // ignore: unnecessary_null_comparison
-        child: (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
-            ? ListView.builder(
-                itemCount: CatalogModel.items.length,
-                itemBuilder: (context, index) => ItemWidget(
-                      item: CatalogModel.items[index],
-                    ))
-            : const Center(
-                child: CircularProgressIndicator(),
-              ),
-      ),
-      // ignore: prefer_const_constructors
-      drawer: MyDrawer(),
     );
   }
 }
