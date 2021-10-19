@@ -29,7 +29,7 @@ class MyTheme {
           elevation: 0.0,
           iconTheme: IconThemeData(color: Colors.white),
           titleTextStyle: TextStyle(
-              color: Colors.black, fontSize: 22, fontWeight: FontWeight.bold)));
+              color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold)));
 
   // Colors
   static Color creamColor = const Color(0xfff5f5f5);
