@@ -6,7 +6,6 @@ import 'package:helloworld/models/catalog.dart';
 import 'package:helloworld/utils/routes.dart';
 import 'package:helloworld/widgets/home_widgets/catalog_header.dart';
 import 'package:helloworld/widgets/home_widgets/catalog_list.dart';
-import 'package:helloworld/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class HomePage extends StatefulWidget {
