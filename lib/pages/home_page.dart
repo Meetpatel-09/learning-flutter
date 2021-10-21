@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: VxBuilder(
         mutations: const {AddMutation, RemoveMutation},
         builder: (ctx, x, _) => FloatingActionButton(
-          onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
+          onPressed: () => context.vxNav.push(Uri.parse(MyRoutes.cartRoute)),
           backgroundColor: context.backgroundColor,
           child: const Icon(
             CupertinoIcons.cart,
